@@ -1,8 +1,3 @@
-export interface MagiccardsDto {
-    id: string;
-    name: string;
-}
-
 export interface MagicRelatedCardsDto {
     id: number;
     component: string;
@@ -11,4 +6,7 @@ export interface MagicRelatedCardsDto {
     color: string
     magicCardId: number;
     parentCardId: number;
+    image_uris:{
+        normal:string
+    }
 }

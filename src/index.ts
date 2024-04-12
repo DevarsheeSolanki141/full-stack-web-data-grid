@@ -7,10 +7,10 @@ const port = 3001;
 
 app.use(function (req, res, next) {
   let allowedOrigins;
-  
+
   allowedOrigins = ["http://localhost:3000"];
-  
-  const origin = req.headers.origin;
+
+  const origin: string = req.headers.origin as string;
 
   if (allowedOrigins.includes(origin)) {
     res.setHeader("Access-Control-Allow-Origin", origin);
@@ -27,12 +27,12 @@ app.use(function (req, res, next) {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api/magiccards", router);
+app.use("/api", router);
 
 
 try {
   app.listen(port, (): void => {
-      console.log(`Connected successfully on port ${port}`);
+    console.log(`Connected successfully on port ${port}`);
   });
 } catch (error) {
   console.error(`Error occured: ${error}`);

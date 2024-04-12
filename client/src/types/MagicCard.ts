@@ -9,6 +9,10 @@ export interface MagicCardsDto {
         image_uris:{
             normal: string
         };
-        collector_number:number
+        collector_number:number;
+        magic_related_card:{
+            magic_relatedcard_name: string,
+            color: string
+        }
    
 }

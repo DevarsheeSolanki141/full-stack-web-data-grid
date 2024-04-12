@@ -5,13 +5,13 @@ class magiccardsController {
 
     getMagiccards = async (req: Request, res: Response) => {
         try {
-            const cards = await magiccardsServices.fetchMagicCards(req.body.search);
-            // let totalCards = cards.total_cards;
+            const response = await magiccardsServices.fetchMagicCards(req.body.search);
             
-            const response = cards;
             if (response) {
                 res.status(200).json(response)
             } else {
+               
+                
                 res.status(500).json({ error: response });
             }
 

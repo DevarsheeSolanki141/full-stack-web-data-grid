@@ -12,16 +12,20 @@ const Card = ({ card }: { card: MagicCardsDto }) => {
                     <img className="card-img h-auto" src={NoImg
                     } alt={card.name} />
                 }
+                {/* Card Details */}
+                <div className="p-2">
+                    <h3 className="text-l font-semibold mb-1">{card.name}</h3>
+                    <p className="text-gray-600 mb-1 truncate">{card.set_name}</p>
+                    <div className="flex justify-between items-center mb-2">
+                        <p className="text-gray-600 text-sm font-semibold">{card.rarity}</p>
+                        <p className="text-gray-600 text-sm font-semibold">{card.collector_number}</p>
+                    </div>
 
-                <div>
-                    <div className="px-3 py-2">
-                        <div className="font-bold text-l mb-2">{card.name}</div>
-                        <p className="text-gray-700 text-base">{card.set_name}</p>
-                    </div>
-                    <div className="px-3 py-2">
-                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{card.rarity}</span>
-                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">{card.collector_number}</span>
-                    </div>
+                    {card.magic_related_card &&
+                        <div className="flex justify-between items-center">
+                            <span className="inline-block px-2 py-1 leading-none bg-orange-200 text-orange-800 rounded-full font-semibold uppercase tracking-wide text-xs">{card.magic_related_card.magic_relatedcard_name}</span>
+                            <span className="inline-block px-2 py-1 leading-none bg-orange-200 text-orange-800 rounded-full font-semibold uppercase tracking-wide text-xs">{card.magic_related_card.color}</span>
+                        </div>}
                 </div>
             </div>
         </div>
