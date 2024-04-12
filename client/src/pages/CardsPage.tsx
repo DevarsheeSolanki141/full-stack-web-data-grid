@@ -2,7 +2,6 @@ import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import Card from '../component/CardBlock';
 import { MagicCardsDto } from '../types/MagicCard';
-import Container from '../pages/Container';
 import '../styles/card.css';
 
 const CardsPage = ({ cards }: { cards: [] }) => {
